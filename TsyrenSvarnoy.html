@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TsyrenSvarnoy</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e7f3ff;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    /* Шторка */
+    header {
+      background-color: #0088cc;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    header button {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header button:hover {
+      background-color: white;
+      color: #0088cc;
+    }
+
+    /* Основной контейнер */
+    .container {
+      max-width: 500px;
+      background: white;
+      margin: 40px auto;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 136, 204, 0.2);
+      text-align: center;
+    }
+
+    h1 {
+      color: #0088cc;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    .raffle {
+      background-color: #d0e7ff;
+      border: 2px solid #0088cc;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: left;
+      color: #004a80;
+    }
+
+    .raffle h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .raffle p {
+      margin: 8px 0;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .raffle .date {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .raffle button {
+      background-color: #0088cc;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .raffle button:hover {
+      background-color: #006f9a;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">TsyrenSvarnoy</div>
+    <button onclick="window.location.href='randomizer.html'">Randomizer</button>
+  </header>
+
+  <div class="container">
+    <h1>Добро пожаловать!</h1>
+    <p>Здесь вы найдете всю актуальную информацию о моих проектах, розыгрышах и новостях. Следите за обновлениями!</p>
+
+    <div class="raffle">
+      <h2>Актуальный розыгрыш: Летний Приз 2025</h2>
+      <p>Прими участие в нашем летнем розыгрыше и выиграй супер-набор гаджетов!</p>
+      <p class="date">Дата окончания: 31 июля 2025</p>
+      <button onclick="window.location.href='https://t.me/your_telegram_bot'">Участвовать</button>
+    </div>
+  </div>
+</body>
+
+</html>
