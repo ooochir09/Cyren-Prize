@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TsyrenSvarnoy</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e7f3ff;
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e7f3ff;
       color: #222;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Шторка */
     header {
       background-color: #0088cc;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 30px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 12px 20px;
+      flex-shrink: 0;
     }
 
     header .logo {
@@ -37,8 +35,8 @@
       background-color: transparent;
       border: 2px solid white;
       color: white;
-      padding: 8px 18px;
-      border-radius: 8px;
+      padding: 6px 14px;
+      border-radius: 6px;
       font-size: 1rem;
       font-weight: 600;
       cursor: pointer;
@@ -50,12 +48,20 @@
       color: #0088cc;
     }
 
-    /* Основной контейнер */
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
     .container {
       max-width: 500px;
+      width: 100%;
       background: white;
-      margin: 40px auto;
-      padding: 40px 50px;
+      padding: 30px 40px;
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0, 136, 204, 0.2);
       text-align: center;
@@ -65,80 +71,143 @@
       color: #0088cc;
       margin-bottom: 15px;
       font-weight: 700;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
     p {
       font-size: 1.1rem;
       color: #444;
       line-height: 1.5;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .raffle {
       background-color: #d0e7ff;
       border: 2px solid #0088cc;
       border-radius: 10px;
-      padding: 20px;
+      padding: 15px;
       text-align: left;
       color: #004a80;
+      margin-top: 10px;
     }
 
     .raffle h2 {
       margin-top: 0;
       margin-bottom: 10px;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
 
     .raffle p {
-      margin: 8px 0;
+      margin: 6px 0;
       font-size: 1rem;
-      line-height: 1.4;
     }
 
     .raffle .date {
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .raffle button {
       background-color: #0088cc;
       color: white;
       border: none;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       border-radius: 8px;
       cursor: pointer;
+      padding: 6px 14px;
       transition: background-color 0.3s ease;
-      height:30px;
-      margin: -20px -50px;
-      position:relative;
-      top:50%;
-      left:50%;
     }
 
     .raffle button:hover {
       background-color: #006f9a;
     }
+
+    .footer-bar {
+      background-color: #0088cc;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 8px;
+    }
+
+    .footer-bar .author {
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .footer-bar .socials {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .footer-bar .socials a {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+      text-decoration: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .footer-bar .socials a:hover {
+      background-color: white;
+      color: #0088cc;
+    }
+
+    /* Медиа-запрос для адаптивности на узких экранах */
+    @media (max-width: 400px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+      .footer-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .footer-bar .socials {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
-
 <body>
   <header>
     <div class="logo">TSv</div>
     <button onclick="window.location.href='randomizer.html'">Randomizer</button>
   </header>
 
-  <div class="container">
-    <h1>Добро пожаловать!</h1>
-    <p>Здесь вы найдете всю актуальную информацию о моих проектах, розыгрышах и новостях. Следите за обновлениями!</p>
+  <div class="main">
+    <div class="container">
+      <h1>Добро пожаловать!</h1>
+      <p>Здесь вы найдете всю актуальную информацию о моих проектах, розыгрышах и новостях. Следите за обновлениями!</p>
 
-    <div class="raffle">
-      <h2>Актуальный розыгрыш: Лето 2025</h2>
-      <p>Прими участие в нашем летнем розыгрыше и выиграй супер-набор гаджетов!</p>
-      <p class="date">Дата окончания: 31 июля 2025</p>
-      <button onclick="window.location.href='https://t.me/your_telegram_bot'">Участвовать</button>
+      <div class="raffle">
+        <h2>Актуальный розыгрыш: Лето 2025</h2>
+        <p>Прими участие в нашем летнем розыгрыше и выиграй супер-набор гаджетов!</p>
+        <p class="date">Дата окончания: 31 июля 2025</p>
+        <button onclick="window.location.href='https://t.me/your_telegram_bot'">Участвовать</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="author">Tsyren Galsanov</div>
+    <div class="socials">
+      <a href="https://vk.com/your_vk_page" target="_blank">VK</a>
+      <a href="https://t.me/your_telegram_channel" target="_blank">Telegram</a>
     </div>
   </div>
 </body>
