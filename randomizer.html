@@ -106,7 +106,7 @@
     <h1 id="number">?</h1>
     <div>
       <input type="number" id="min" placeholder="Мин" value="1" />
-      <input type="number" id="max" placeholder="Макс" value="1000" />
+      <input type="number" id="max" placeholder="Макс" value="100" />
     </div>
     <button onclick="generateRandom()">Сгенерировать</button>
   </main>
@@ -116,7 +116,7 @@
 
     function generateRandom() {
       const min = parseInt(document.getElementById('min').value) || 1;
-      const max = parseInt(document.getElementById('max').value) || 1000;
+      const max = parseInt(document.getElementById('max').value) || 100;
       if (min > max) {
         alert('Мин должен быть меньше или равен Макс');
         return;
